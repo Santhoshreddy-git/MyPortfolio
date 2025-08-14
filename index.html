@@ -1,21 +1,93 @@
 index.html
 <!doctype html>
 <html lang="en">
-<head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sai Santhosh — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --accent-2: #8b5cf6;
+      --card: #0b1220;
+      --border: #1f2937;
+    }
+    body.light {
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #0ea5e9;
+      --accent-2: #7c3aed;
+      --card: #f9fafb;
+      --border: #e5e7eb;
+    }
+    body { margin:0; font-family:Poppins, sans-serif; background:var(--bg); color:var(--text); transition: background .3s, color .3s; }
+    .nav { position:sticky; top:0; background:var(--bg); display:flex; justify-content:space-between; align-items:center; padding:1rem; border-bottom:1px solid var(--border); }
+    .links { display:flex; align-items:center; gap:1rem; }
+    .links a { color:var(--text); text-decoration:none; }
+    .links a:hover { color:var(--accent); }
+    .btn { border:1px solid var(--border); padding:.5rem 1rem; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; cursor:pointer; }
+    .section { max-width:900px; margin:auto; padding:2rem 1rem; }
+    #contact a { color:var(--accent); }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Portfolio</h1>
+  <nav class="nav">
+    <div>Sai Santhosh</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="btn">🌙/☀️</button>
+      <a class="btn" href="assets/Sai_Santhosh_Reddy_Resume.pdf" download>Download Résumé</a>
+    </div>
+  </nav>
+  <section id="about" class="section">
+    <h1>About Me</h1>
+    <p>Got it — here’s the updated **About section** without mentioning a current job:
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="saisanthoshreddy0111@gmail.com">saisanthoshreddy0111@gmail.com</a></p>
-    <p>Phone: <a href="tel:+13617205689">+1 (361)7205689</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-santhosh-reddy-katamreddy/" target="https://www.linkedin.com/in/sai-santhosh-reddy-katamreddy/">your-linkedin</a></p>
-    <p>GitHub: <a href="https://github.com/Santhoshreddy-git" target=https://github.com/Santhoshreddy-git</a></p>
+---
+
+💫 **Hello! I'm Sai Santhosh Reddy Katamreddy**, a passionate innovator and problem solver, currently pursuing my **Master’s in Computer Science** at Texas A\&M University–Kingsville.
+
+🎯 **My mission?** Build impactful, secure, and high-performance software solutions that inspire change and push boundaries.
+
+💻 I have professional experience as a **Quality Assurance Engineer**, ensuring flawless software releases through meticulous testing, regression analysis, and interface optimization. My past projects span **full-stack development**, **cloud computing**, and **real-time systems**—blending creativity with technical precision.
+
+🚀 **What drives me?** The thrill of solving complex problems, optimizing systems, and crafting solutions that stand the test of time. I’m also deeply interested in **cybersecurity and ethical hacking**, and continuously learning to stay ahead in a fast-evolving tech landscape.
+
+🤝 **Ready to Collaborate?**
+If you’re looking for someone who combines technical expertise with a relentless drive for improvement, let’s connect and build something extraordinary!</p>
   </section>
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <ul>
+      <li>Task Manager App — React + Node</li>
+      <li>Cyberbullying Classifier — Python + NLTK</li>
+      <li>Real‑time Dashboard — WebSockets + Chart.js</li>
+    </ul>
+  </section>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:saisanthoshreddy0111@gmail.com">saisanthoshreddy0111@gmail.com</a></p>
+    <p>Phone: <a href="tel:+13617205689">+1 (361) 720‑5689</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-santhosh-reddy-katamreddy/" target="_blank">sai‑santosh‑reddy‑katamreddy</a></p>
+    <p>GitHub: <a href="https://github.com/Santhoshreddy-git" target="_blank">Santhoshreddy-git</a></p>
+  </section>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') document.body.classList.add('light');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    });
+  </script>
 </body>
 </html>
+
